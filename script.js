@@ -93,7 +93,7 @@ function updateMenuPosition() {
 window.addEventListener("resize", updateMenuPosition);
 updateMenuPosition();
 
-//"Липкая" шапка
+//"Липкая" шапка f
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
