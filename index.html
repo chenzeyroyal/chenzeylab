@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHENZEYLAB</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header header--scrolled">
+      <div class="container header__container">
+        <div class="header__title">
+          <img
+            src="img/web-logo.png"
+            class="title__logo"
+            alt="Логотип 'CHENZEYLAB'"
+          />
+          <div class="title__text">
+            <h1 class="title">CHENZEYLAB</h1>
+            <p class="subtitle">Web Developer</p>
+          </div>
+        </div>
+        <nav class="menu">
+          <ul class="menu__list" data-movable="menu__list">
+            <li class="menu__item"><a href="#skills">Навыки</a></li>
+            <li class="menu__item"><a href="#portfolio">Портфолио</a></li>
+            <li class="menu__item"><a href="#">Опыт работы</a></li>
+            <li class="menu__item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <button class="burger-btn" data-display="burger">
+          <span></span>
+        </button>
+        <div class="theme">
+          <div class="theme__toggle">
+            <svg
+              class="theme__icon_light"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+              />
+            </svg>
+
+            <svg
+              class="theme__icon_dark"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
+            </svg>
+            <span class="theme__switch"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="sidebar" data-menu="sidebar"></div>
+      <section class="slider">
+        <div class="slider__buttons">
+          <button class="prev-btn" data-action="prev">
+            <img src="img/slider-btn-prev.png" alt="Назад" />
+          </button>
+          <button class="next-btn" data-action="next">
+            <img src="img/slider-btn-next.png" alt="Вперед" />
+          </button>
+        </div>
+        <div class="slider__line">
+          <article class="slider__slide" data-slide="1">
+            <div class="slide__text-container">
+              <div class="slide__text first active">
+                <h2>Современные технологии</h2>
+                <p>
+                  Создаю сайты с использованием передовых технологий,
+                  обеспечивая адаптивность, кроссбраузерность и чистый код. Ваш
+                  проект будет выглядеть идеально на любых устройствах.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="slider__slide" data-slide="2">
+            <div class="slide__text-container">
+              <div class="slide__text second">
+                <h2>Дизайн, который вдохновляет</h2>
+                <p>
+                  Каждый сайт - не просто код, а уникальный пользовательский
+                  опыт. Разрабатываю интерфейсы, которые не только удобны, но и
+                  визуально впечатляют. Эстетика и функциональность - в балансе.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="slider__slide" data-slide="3">
+            <div class="slide__text-container">
+              <div class="slide__text third">
+                <h2>Скорость = плавность</h2>
+                <p>
+                  Время - ценный ресурс, поэтому мой подход предполагает минимум
+                  ожидания и максимум результата.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="skills">
+        <div class="container skills__container">
+          <h2 id="skills">Хард-скиллы</h2>
+          <ul class="skills__hard-skills">
+            <li class="skills__item">
+              <img src="img/html-logo.png" alt="" />
+              <h3>HTML</h3>
+              <p>
+                Чистая и семантчиески правильная разметка, обеспечивающие
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img src="img/css-logo.png" alt="" />
+              <h3>CSS</h3>
+              <p>
+                Владение технологиями стилизации, позволяющее создавать живые и
+                адаптивные интерфейсы.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img src="img/js-logo.png" alt="" />
+              <h3>JavaScript</h3>
+              <p>
+                Интерактивность и динамическое поведение сайта - владею методами
+                работы с DOM, ассинхронным кодом и популярными фреймворками.
+              </p>
+            </li>
+            <li class="skills__item">
+              <svg
+                class="skill-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="100"
+                height="100"
+                viewBox="0 0 50 50"
+              >
+                <path
+                  d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
+                ></path>
+              </svg>
+              <h3>GitHub</h3>
+              <p>Умение работать с репозиториями.</p>
+            </li>
+            <li class="skills__item">
+              <img src="img/wordpress-logo.png" alt="" />
+              <h3>WordPress</h3>
+              <p>Опыт работы с многостраничными сайтами на CMS.</p>
+            </li>
+            <li class="skills__item">
+              <img src="img/js-logo.png" alt="" />
+              <h3>JavaScript</h3>
+              <p>
+                Интерактивность и динамическое поведение сайта - владею методами
+                работы с DOM, ассинхронным кодом и популярными фреймворками.
+              </p>
+            </li>
+          </ul>
+          <h2>Софт-скиллы</h2>
+          <ul class="skills__soft-skills">
+            <li class="skills__item">
+              <h3>Оперативность</h3>
+              <p>Всегда помню о сроках задачи.</p>
+            </li>
+            <li class="skills__item">
+              <h3>Командная работа</h3>
+              <p>Умею работать в команде.</p>
+            </li>
+            <li class="skills__item">
+              <h3>Детали</h3>
+              <p>Уделяю значимую часть внимания деталям.</p>
+            </li>
+            <li class="skills__item">
+              <h3>Качество кода</h3>
+              <p>Чистота, удобство и качество - главные элементы моего кода.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="portfolio">
+        <div class="container">
+          <h2 id="portfolio">Портфолио</h2>
+          <div class="portfolio__item">
+            <div class="portfolio__item-img-box">
+              <img src="img/fon_dlya_lendinga.jpg" alt="" />
+            </div>
+            <div class="portfolio__item__desc">
+              <div class="portfolio__item__desc-line"></div>
+              <div class="portfolio__item__desc-text">
+                <h3>Winestore</h3>
+                <p>
+                  Невероятный опыт в работе с CMS по созданию многостраничного
+                  сайта. В проекте настроена синхронизация с 1С, SEO и всё это в
+                  обёртке стильного дизайна. Невероятный опыт в работе с CMS по
+                  созданию многостраничного сайта. В проекте настроена
+                  синхронизация с 1С, SEO и всё это в обёртке стильного дизайна.
+                  Невероятный опыт в работе с CMS по созданию многостраничного
+                  сайта. В проекте настроена синхронизация с 1С, SEO и всё это в
+                  обёртке стильного дизайна. Невероятный опыт в работе с CMS по
+                  созданию многостраничного сайта. В проекте настроена
+                  синхронизация с 1С, SEO и всё это в обёртке стильного дизайна.
+                  Невероятный опыт в работе с CMS по созданию многостраничного
+                  сайта. В проекте настроена синхронизация с 1С, SEO и всё это в
+                  обёртке стильного дизайна.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
