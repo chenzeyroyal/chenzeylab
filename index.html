@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru" data-js-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHENZEYLAB</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo logo">
+          <div class="header__logo">
+            <img
+              class="header__logo-image"
+              src="./images/logo.png"
+              alt=""
+              width="100"
+              height="100"
+            />
+            <h1>CHENZEYLAB</h1>
+          </div>
+        </a>
+        <nav class="header__menu" data-js-menu>
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a href="#about" class="header__menu-link">Обо мне</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#skills" class="header__menu-link">Навыки</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#portfolio" class="header__menu-link">Портфолио</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#contacts" class="header__menu-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__buttons">
+          <button class="header__theme-toggle" data-js-theme-toggle>
+            <img src="./icons/sun-icon.svg" class="icon" alt="Sun icon" />
+            <img src="./icons/moon-icon.svg" class="icon" alt="Moon icon" />
+            <span
+              class="header__theme-toggle-switch"
+              data-js-theme-switch
+            ></span>
+          </button>
+          <button
+            class="header__burger-button burger-button display-mobile"
+            data-js-burger
+          >
+            <span class="header__burger-button-line burger-button__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero container">
+        <div class="hero__welcome">
+          <p class="hero__welcome-paragraph" data-js-paragraph>
+            ВОПЛОЩАЮ ВАШИ ИДЕИ В КОД.
+          </p>
+          <span class="hero__welcome-typewriter" data-js-typewriter></span>
+          <p class="hero__welcome-description" data-js-description>
+            Занимаюсь веб-разработкой с 2024 года. Плавность, чистый код и
+            внимание деталям - всё, чтобы Ваш проект выглядел безупречно.
+          </p>
+          <button
+            class="hero__welcome-button-contact welcome-button"
+            data-js-contact-button
+          >
+            СВЯЗАТЬСЯ
+          </button>
+          <button
+            class="hero__welcome-button-next welcome-button"
+            data-js-next-button
+          >
+            ДАЛЕЕ
+          </button>
+        </div>
+        <div class="hero__robot robot">
+          <div class="robot__wrapper" data-js-robot>
+            <div class="robot__head rotate-head" data-js-robotHead>
+              <div class="robot__eye robot__eye-left" data-js-robotEye></div>
+              <div class="robot__eye robot__eye-right" data-js-robotEye></div>
+            </div>
+            <div class="robot__body">
+              <div class="robot__arm"></div>
+              <div class="robot__torse-outline"></div>
+              <div class="robot__torse">
+                <button
+                  class="robot__button robot__button-toggle"
+                  data-js-robotButton
+                >
+                  <svg
+                    class="robot__power-icon icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-power"
+                  >
+                    <path d="M12 2v10" />
+                    <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+                  </svg>
+                </button>
+              </div>
+              <div class="robot__arm arm-wave" data-js-robotArm></div>
+            </div>
+          </div>
+          <div class="robot__shadow" data-js-robotShadow></div>
+        </div>
+      </section>
+      <section class="about container" id="about">
+        <h2>Обо мне</h2>
+        <div class="about__wrapper">
+          <div class="about__avatar">
+            <img src="./images/adaptive.jpg" alt="" width="200" height="200" />
+            <h3>Александр Коженкин</h3>
+            <p>Frontend-разработчик</p>
+          </div>
+          <div class="about__bio">
+            <h3>Биография</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+              nisi ipsam possimus neque modi. Cum totam voluptas quo quae.
+              Commodi consequatur quam dicta hic unde quaerat aliquam tempore in
+              tempora.
+            </p>
+            <div class="about__experience">
+              <h3>Опыт работы</h3>
+              <p>-</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills container" id="skills">
+        <div class="skills__hard-skills">
+          <h2>Хард-скиллы</h2>
+          <ul class="skills__list">
+            <li class="skills__item">
+              <img
+                src="./images/html-logo.png"
+                alt="HTML logo"
+                width="50"
+                height="50"
+              />
+              <h3>HTML</h3>
+
+              <p>
+                Чистая и семантически правильная разметка, обеспечивающая
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img
+                src="./images/css-logo.png"
+                alt="CSS logo"
+                width="50"
+                height="50"
+              />
+              <h3>CSS</h3>
+              <p>
+                Чистая и семантически правильная разметка, обеспечивающая
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img
+                src="./images/js-logo.png"
+                alt="wordpress-logo"
+                width="50"
+                height="50"
+              />
+              <h3>JavaScript</h3>
+              <p>
+                Чистая и семантически правильная разметка, обеспечивающая
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img
+                src="./images/wordpress-logo.png"
+                alt="wordpress-logo"
+                width="50"
+                height="50"
+              />
+              <h3>Git</h3>
+              <p>
+                Чистая и семантически правильная разметка, обеспечивающая
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+            <li class="skills__item">
+              <img
+                src="./images/wordpress-logo.png"
+                alt="wordpress-logo"
+                width="50"
+                height="50"
+              />
+              <h3>WordPress</h3>
+              <p>
+                Чистая и семантически правильная разметка, обеспечивающая
+                удобство восприятия как для пользователей, так и для поисковых
+                систем.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="skills__soft-skills">
+          <h2>Софт-скиллы</h2>
+          <ul class="skills__list">
+            <li class="skills__item">
+              <h3>Оперативность</h3>
+
+              <p>Всегда помню о сроках задачи.</p>
+            </li>
+            <li class="skills__item">
+              <h3>Командная работа</h3>
+              <p>Умею работать в команде.</p>
+            </li>
+            <li class="skills__item">
+              <h3>Детали</h3>
+              <p>Уделяю значимую часть внимания деталям.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="portfolio container" id="portfolio">
+        <div class="portfolio__modals">
+          <div class="portfolio__modal">
+            <img
+              src="/images/fon_dlya_lendinga.jpg"
+              alt=""
+              class="portfolio__modal-image"
+            />
+            <span class="portfolio__modal-close">&times;</span>
+          </div>
+          <div class="portfolio__modal">
+            <img
+              src="/images/fon_dlya_lendinga.jpg"
+              alt=""
+              class="portfolio__modal-image"
+            />
+            <span class="portfolio__modal-close">&times;</span>
+          </div>
+          <div class="portfolio__modal">
+            <img
+              src="/images/fon_dlya_lendinga.jpg"
+              alt=""
+              class="portfolio__modal-image"
+            />
+            <span class="portfolio__modal-close">&times;</span>
+          </div>
+        </div>
+        <h2>Портфолио</h2>
+        <ul class="portfolio__list">
+          <li class="portfolio__list-item">
+            <img
+              src="./images/fon_dlya_lendinga.jpg"
+              alt=""
+              class="portfolio__image"
+            />
+            <div class="portfolio__list-item-desc">
+              <h4>Wordpress</h4>
+              <h3><a href="#">Winestore</a></h3>
+              <p>
+                Опыт работы с CMS по созданию многостраничного
+                интернет-магазина. В проекте реализована синхронизация с 1С и
+                настроено SEO. Все это в обертке стильного дизайна.
+              </p>
+            </div>
+          </li>
+          <li class="portfolio__list-item">
+            <img src="./images/adaptive.jpg" alt="" class="portfolio__image" />
+            <div class="portfolio__list-item-desc">
+              <h4>HTML & CSS</h4>
+              <h4>JavaScript</h4>
+
+              <h3><a href="#">SSwedding</a></h3>
+              <p>
+                Одностраничное свадебное приглашение в минималистичном стиле.
+                Просто и со вкусом.
+              </p>
+            </div>
+          </li>
+          <li class="portfolio__list-item">
+            <img
+              src="./images/fon_dlya_lendinga.jpg"
+              alt=""
+              class="portfolio__image"
+            />
+            <div class="portfolio__list-item-desc">
+              <h4>HTML & CSS</h4>
+              <h4>JavaScript</h4>
+              <h3><a href="#">Sofya Nikonova</a></h3>
+              <p>Сайт-портфолио для фотографа.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
