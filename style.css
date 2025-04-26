@@ -124,7 +124,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 1.5rem;
 }
 .header__logo {
   display: flex;
@@ -760,6 +759,7 @@ body {
   }
   .hero {
     grid-template-columns: 1fr;
+    padding-top: 0;
   }
   .robot__wrapper {
     padding-top: 10rem;
