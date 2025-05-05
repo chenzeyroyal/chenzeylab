@@ -101,52 +101,58 @@ const robot = {
   shadow: document.querySelector("[data-js-robotShadow]"),
 };
 
-robot.button.addEventListener("click", () => {
-  let interval = setInterval(() => {
-    const translateY =
-      parseFloat(getComputedStyle(robot.wrapper).transform.split(", ")[5]) || 0;
-    if (Math.round(translateY) === 0) {
-      clearInterval(interval);
-      robot.wrapper.classList.toggle("landed");
-      robot.shadow.classList.toggle("landed-shadow");
-    }
-  }, 100);
-  robot.eyes.forEach((eye) => {
-    eye.classList.toggle("landed");
-    eye.classList.remove("hide");
-    eye.classList.toggle("robot-sleep");
-  });
-  robot.head.classList.toggle("rotate-head");
-  robot.arm.classList.toggle("arm-wave");
-});
-
-robot.arm.addEventListener("animationstart", () => {
-  robot.eyes.forEach((eye) => {
-    eye.classList.add("hide");
-  });
-});
-robot.arm.addEventListener("animationend", () => {
-  robot.eyes.forEach((eye) => {
-    eye.classList.remove("hide");
-  });
-});
-
-robot.head.addEventListener("mouseover", () => {
-  robot.eyes.forEach((eye) => {
-    if (!eye.classList.contains("robot-sleep")) {
-      eye.classList.add("landed");
-      eye.classList.add("hide");
-    }
-  });
-});
-robot.head.addEventListener("mouseout", () => {
-  robot.eyes.forEach((eye) => {
-    if (!eye.classList.contains("robot-sleep")) {
-      eye.classList.remove("landed");
+function toggleRobotMode() {
+  robot.button.addEventListener("click", () => {
+    let interval = setInterval(() => {
+      const translateY =
+        parseFloat(getComputedStyle(robot.wrapper).transform.split(", ")[5]) ||
+        0;
+      if (Math.round(translateY) === 0) {
+        clearInterval(interval);
+        robot.wrapper.classList.toggle("landed");
+        robot.shadow.classList.toggle("landed-shadow");
+      }
+    }, 100);
+    robot.eyes.forEach((eye) => {
+      eye.classList.toggle("landed");
       eye.classList.remove("hide");
-    }
+      eye.classList.toggle("robot-sleep");
+    });
+    robot.head.classList.toggle("rotate-head");
+    robot.arm.classList.toggle("arm-wave");
   });
-});
+}
+toggleRobotMode();
+
+function toggleRobotEyes() {
+  robot.arm.addEventListener("animationstart", () => {
+    robot.eyes.forEach((eye) => {
+      eye.classList.add("hide");
+    });
+  });
+  robot.arm.addEventListener("animationend", () => {
+    robot.eyes.forEach((eye) => {
+      eye.classList.remove("hide");
+    });
+  });
+  robot.head.addEventListener("mouseover", () => {
+    robot.eyes.forEach((eye) => {
+      if (!eye.classList.contains("robot-sleep")) {
+        eye.classList.add("landed");
+        eye.classList.add("hide");
+      }
+    });
+  });
+  robot.head.addEventListener("mouseout", () => {
+    robot.eyes.forEach((eye) => {
+      if (!eye.classList.contains("robot-sleep")) {
+        eye.classList.remove("landed");
+        eye.classList.remove("hide");
+      }
+    });
+  });
+}
+toggleRobotEyes();
 
 const modal = document.querySelectorAll(".portfolio__modal");
 const thumbnail = document.querySelectorAll(".portfolio__image");
@@ -163,69 +169,36 @@ thumbnail.forEach((image, index) => {
         document.body.classList.remove("modal-opened");
       });
     });
+    if (
+      document.body.classList.contains("modal-opened") &&
+      window.innerWidth > 768
+    ) {
+      modal.forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.remove("show-modal");
+          document.body.classList.remove("modal-opened");
+        });
+      });
+    }
   });
 });
 
-// PORTFOLIO SLIDER
+const sections = document.querySelectorAll("section");
+const skillItem = document.querySelector("[data-js-skillItem]");
 
-// const sliderLine = document.querySelector(".portfolio__list");
-// let slides = Array.from(document.querySelectorAll(".portfolio__list-item"));
-// const btnPrev = document.querySelector(".prev");
-// const btnNext = document.querySelector(".next");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(
+    (entry) => {
+      const target = entry.target;
+      if (entry.isIntersecting) {
+        if (target.tagName === "SECTION") {
+          target.classList.add("visible-y");
+          observer.unobserve(target);
+        }
+      }
+    },
+    { treshold: 0.2 }
+  );
+});
 
-// const visibleCount = 3;
-// let index = visibleCount;
-
-// function cloneSlides() {
-//   const firstClones = slides
-//     .slice(0, visibleCount)
-//     .map((slide) => slide.cloneNode(true));
-//   const lastClones = slides
-//     .slice(-visibleCount)
-//     .map((slide) => slide.cloneNode(true));
-
-//   firstClones.forEach((clone) => sliderLine.appendChild(clone));
-//   lastClones
-//     .reverse()
-//     .forEach((clone) => sliderLine.insertBefore(clone, sliderLine.firstChild));
-//   console.log(lastClones);
-//   slides = Array.from(document.querySelectorAll(".portfolio__list-item"));
-// }
-
-// cloneSlides();
-
-// let slideWidth;
-// function updateSize() {
-//   slideWidth = slides[0].getBoundingClientRect().width + 30;
-//   sliderLine.style.transform = `translateX(-${index * slideWidth}px)`;
-// }
-// window.addEventListener("resize", updateSize);
-// updateSize();
-
-// function moveSlider() {
-//   sliderLine.style.transition = "transform 0.3s ease";
-//   sliderLine.style.transform = `translateX(-${index * slideWidth}px)`;
-// }
-
-// btnNext.addEventListener("click", () => {
-//   index++;
-//   moveSlider();
-// });
-
-// btnPrev.addEventListener("click", () => {
-//   index--;
-//   moveSlider();
-// });
-
-// sliderLine.addEventListener("transitionend", () => {
-//   if (index >= slides.length - visibleCount) {
-//     sliderLine.style.transition = "none";
-//     index = visibleCount;
-//     sliderLine.style.transform = `translateX(-${index * slideWidth}px)`;
-//   }
-//   if (index < visibleCount) {
-//     sliderLine.style.transition = "none";
-//     index = slides.length - visibleCount * 2;
-//     sliderLine.style.transform = `translateX(-${index * slideWidth}px)`;
-//   }
-// });
+sections.forEach((section) => observer.observe(section));
