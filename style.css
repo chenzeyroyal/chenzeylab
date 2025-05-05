@@ -692,14 +692,14 @@ main {
   text-align: center;
   padding: 1rem;
   border-radius: 1rem;
-  /* transform: translateX(-50%); */
-  /* transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
-  /* opacity: 0; */
+  transform: translateX(-50%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 0;
 }
-/* .skills__item.visible-x {
+[data-js-fadeItem].visible-x {
   opacity: 1;
   transform: translateX(0);
-} */
+}
 
 .skills__item p {
   margin: 0;
@@ -713,6 +713,9 @@ main {
   border-radius: 1rem;
   box-shadow: var(--shadow-01);
   overflow: hidden;
+  transform: translateX(-50%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 0;
 }
 .portfolio__image {
   width: 100%;

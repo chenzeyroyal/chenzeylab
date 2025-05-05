@@ -184,8 +184,7 @@ thumbnail.forEach((image, index) => {
 });
 
 const sections = document.querySelectorAll("section");
-const skillItem = document.querySelector("[data-js-skillItem]");
-
+const skillsItems = document.querySelectorAll("[data-js-fadeItem]");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(
     (entry) => {
@@ -195,10 +194,16 @@ const observer = new IntersectionObserver((entries) => {
           target.classList.add("visible-y");
           observer.unobserve(target);
         }
+        skillsItems.forEach((item) => {
+          if (target === item) {
+            item.classList.add("visible-x");
+          }
+        });
       }
     },
     { treshold: 0.2 }
   );
 });
 
-sections.forEach((section) => observer.observe(section));
+sections.forEach((el) => observer.observe(el));
+skillsItems.forEach((el) => observer.observe(el));
