@@ -84,18 +84,21 @@
             Плавность, чистый код и внимание деталям - всё, чтобы Ваш проект
             выглядел безупречно.
           </p>
-          <button
-            class="hero__welcome-button-contact welcome-button button"
-            data-js-contact-button
-          >
-            <a href="#contacts">СВЯЗАТЬСЯ</a>
-          </button>
-          <button
-            class="hero__welcome-button-next welcome-button button"
-            data-js-next-button
-          >
-            <a href="#about">ДАЛЕЕ</a>
-          </button>
+          <div class="hero__welcome-buttons" data-js-welcomeButtons>
+            <a
+              href="#contacts"
+              class="hero__welcome-button-contact button"
+              data-js-contact-button
+              >СВЯЗАТЬСЯ</a
+            >
+
+            <a
+              href="#about"
+              class="hero__welcome-button-next button"
+              data-js-next-button
+              >ДАЛЕЕ</a
+            >
+          </div>
         </div>
         <div class="hero__robot robot">
           <div class="robot__wrapper" data-js-robot>
@@ -163,7 +166,7 @@
         <div class="skills__hard-skills">
           <h2>Хард-скиллы</h2>
           <ul class="skills__list">
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <img
                 src="./images/html-logo.png"
                 alt=""
@@ -178,7 +181,7 @@
                 восприятия как для пользователей, так и для поисковых систем.
               </p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <img
                 src="./images/css-logo.png"
                 alt=""
@@ -191,7 +194,7 @@
                 Создаю адаптивный, современный и продуманный до деталей дизайн.
               </p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <img
                 src="./images/js-logo.png"
                 alt="wordpress-logo"
@@ -204,7 +207,7 @@
                 расширяя возможности интерфейса.
               </p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <img
                 src="./images/git-logo.png"
                 alt=""
@@ -215,7 +218,7 @@
               <h3 class="heading-accent">Git</h3>
               <p>Умею работать с системой контроля версий.</p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <img
                 src="./images/wordpress-logo.png"
                 alt=""
@@ -231,60 +234,33 @@
         <div class="skills__soft-skills">
           <h2>Софт-скиллы</h2>
           <ul class="skills__list">
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <h3 class="heading-accent">Оперативность</h3>
 
               <p>Всегда помню о сроках задачи.</p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <h3 class="heading-accent">Командная работа</h3>
               <p>Умею работать в команде.</p>
             </li>
-            <li class="skills__item" data-js-fadeItem>
+            <li class="skills__item" data-js-slideItem>
               <h3 class="heading-accent">Детали</h3>
               <p>Уделяю значимую часть внимания деталям.</p>
             </li>
           </ul>
         </div>
       </section>
+
       <section class="portfolio container" id="portfolio">
-        <div class="portfolio__modals">
-          <div class="portfolio__modal">
-            <img
-              src="./images/fon_dlya_lendinga.jpg"
-              alt=""
-              aria-hidden="true"
-              class="portfolio__modal-image"
-            />
-            <span class="portfolio__modal-close">&times;</span>
-          </div>
-          <div class="portfolio__modal">
-            <img
-              src="./images/fon_dlya_lendinga.jpg"
-              alt=""
-              aria-hidden="true"
-              class="portfolio__modal-image"
-            />
-            <span class="portfolio__modal-close">&times;</span>
-          </div>
-          <div class="portfolio__modal">
-            <img
-              src="./images/fon_dlya_lendinga.jpg"
-              alt=""
-              aria-hidden="true"
-              class="portfolio__modal-image"
-            />
-            <span class="portfolio__modal-close">&times;</span>
-          </div>
-        </div>
         <h2>Портфолио</h2>
         <ul class="portfolio__list">
-          <li class="portfolio__list-item" data-js-fadeItem>
+          <li class="portfolio__list-item">
             <img
               src="./images/fon_dlya_lendinga.jpg"
               alt=""
               aria-hidden="true"
               class="portfolio__image"
+              data-js-portfolioImage
             />
             <div class="portfolio__list-item-desc">
               <h4 class="category">Wordpress</h4>
@@ -296,12 +272,13 @@
               </p>
             </div>
           </li>
-          <li class="portfolio__list-item" data-js-fadeItem>
+          <li class="portfolio__list-item">
             <img
               src="./images/adaptive.jpg"
               alt=""
               aria-hidden="true"
               class="portfolio__image"
+              data-js-portfolioImage
             />
             <div class="portfolio__list-item-desc">
               <h4 class="category">HTML & CSS</h4>
@@ -314,12 +291,13 @@
               </p>
             </div>
           </li>
-          <li class="portfolio__list-item" data-js-fadeItem>
+          <li class="portfolio__list-item">
             <img
               src="./images/fon_dlya_lendinga.jpg"
               alt=""
               aria-hidden="true"
               class="portfolio__image"
+              data-js-portfolioImage
             />
             <div class="portfolio__list-item-desc">
               <h4 class="category">HTML & CSS</h4>
@@ -438,18 +416,22 @@
     <footer class="footer">
       <div class="footer__text">
         <h3>CHENZEYLAB</h3>
-        <p>
-          Плавность, чистый код и внимание деталям - всё, чтобы Ваш проект
-          выглядел безупречно.
-        </p>
       </div>
-
       <div class="footer__copiright">
         <p>
           &copy; 2025 Alexander Kozhenkin | Написано на HTML, CSS & JavaScript
         </p>
       </div>
     </footer>
+    <div class="portfolio__modal" data-js-modal>
+      <img
+        src="./images/fon_dlya_lendinga.jpg"
+        alt=""
+        aria-hidden="true"
+        class="portfolio__modal-image"
+      />
+      <span class="portfolio__modal-close" data-js-modalClose>&times;</span>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -53,6 +53,9 @@ h2::before {
   left: 0;
   transition-duration: var(--transition-duration);
 }
+h3 {
+  font-size: 1.125rem;
+}
 h4 {
   font-size: 0.875rem;
 }
@@ -91,8 +94,6 @@ section {
 
   --robot-shadow: rgb(0, 0, 0);
   --robot-shadow-02: rgba(0, 0, 0, 0.5);
-  /* --shadow-01: 0rem 0em 2px rgb(129, 129, 129);
-   */
 }
 
 /* --- UTILS --- */
@@ -103,14 +104,19 @@ section {
   margin-inline: auto;
 }
 .button {
-  background-color: var(--color-accent);
   color: white;
+  background-color: var(--color-accent);
   padding: 0.625rem;
   border-radius: 1rem;
   font-weight: 700;
+  font-size: 0.875rem;
   box-shadow: var(--shadow-inner);
   border: 0.125rem solid var(--color-accent);
   transition-duration: var(--transition-duration);
+}
+.button:hover {
+  background-color: transparent;
+  color: var(--color-dark);
 }
 .category {
   display: inline-block;
@@ -125,12 +131,7 @@ section {
   color: var(--color-purple);
   font-size: 1.125rem;
 }
-/* .portoflio-link {
-  font-size: 1.125rem;
-} */
-h3 {
-  font-size: 1.125rem;
-}
+
 /* GLOBALS */
 
 body {
@@ -323,51 +324,22 @@ body {
   transition-duration: 2s;
   width: 100%;
 }
-
-.welcome-button {
+.hero__welcome-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   opacity: 0;
-  width: 6.563rem;
   visibility: hidden;
-  margin-top: 1%;
-  transition-property: opacity;
   transition-duration: 2s;
-}
-.hero__welcome-button-contact a {
-  color: white;
-}
-.hero__welcome-button-contact:hover {
-  background-color: transparent;
-  &.hero__welcome-button-contact a {
-    color: var(--color-dark);
-  }
+  transition-property: opacity;
 }
 .hero__welcome-button-next {
   background-color: transparent;
-  color: currentColor;
-  margin-left: 1rem;
+  color: var(--color-dark);
 }
 .hero__welcome-button-next:hover {
   background-color: var(--color-accent);
-  &.hero__welcome-button-next a {
-    color: white;
-  }
-}
-.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.hide {
-  visibility: hidden;
-}
-section {
-  opacity: 0;
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  transform: translateY(-5rem);
-}
-section.visible-y {
-  opacity: 1;
-  transform: translateY(0);
+  color: white;
 }
 
 @keyframes blinkCursor {
@@ -397,40 +369,40 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 0.938rem;
   animation: fly 5s infinite;
 }
 .robot__head {
   position: relative;
-  width: 200px;
-  height: 150px;
+  width: 12.5rem;
+  height: 9.375rem;
   background-color: var(--color-robot);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid var(--color-purple);
-  border-radius: 50px;
-  box-shadow: inset 0 0 10px var(--robot-shadow);
+  border: 0.313rem solid var(--color-purple);
+  border-radius: 3.125rem;
+  box-shadow: inset 0 0 0.625rem var(--robot-shadow);
   transition-property: rotate;
   transition-duration: 1s;
 }
 .robot__head::before {
   position: absolute;
   content: "";
-  width: 5px;
-  height: 40px;
+  width: 0.313rem;
+  height: 2.5rem;
   background-color: rgba(96, 96, 96, 0.82);
-  top: -45px;
+  top: -2.813rem;
 }
 
 .robot__head::after {
   position: absolute;
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 0.938rem;
+  height: 0.938rem;
   background-color: var(--color-purple);
   border-radius: 50%;
-  top: -50px;
+  top: -3.125rem;
   animation: blinkAntenna 3s infinite;
 }
 @keyframes blinkAntenna {
@@ -448,11 +420,11 @@ main {
 }
 .robot__eye {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border-radius: 1rem;
   background-color: var(--color-purple);
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0.313rem 0.313rem 0.313rem rgba(0, 0, 0, 0.5);
   transition-property: height;
   transition-duration: 0.3s;
   animation: blink 5s infinite;
@@ -461,8 +433,8 @@ main {
 .robot__eye::after {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 8px;
+  width: 1.75rem;
+  height: 0.5rem;
   background-color: var(--color-purple);
   border-radius: 1rem;
   visibility: hidden;
@@ -470,12 +442,12 @@ main {
 .robot__eye::before {
   transform: rotate(-43deg);
   top: 40%;
-  left: 3px;
+  left: 0.188rem;
 }
 .robot__eye::after {
   transform: rotate(43deg);
   top: 40%;
-  right: 3px;
+  right: 0.188rem;
 }
 .robot__eye.hide::before,
 .robot__eye.hide::after {
@@ -483,7 +455,7 @@ main {
 }
 .robot__body {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -492,20 +464,20 @@ main {
   position: absolute;
   clip-path: ellipse(50% 60% at 50% 35%);
   background-color: var(--color-purple);
-  width: 165px;
-  border-radius: 60px;
-  height: 185px;
+  width: 10.313rem;
+  border-radius: 3.75rem;
+  height: 11.563rem;
 }
 .robot__torse {
-  width: 160px;
-  height: 175px;
+  width: 10rem;
+  height: 10.938rem;
   clip-path: ellipse(50% 60% at 50% 40%);
   background-color: var(--color-robot);
-  border-radius: 60px;
+  border-radius: 3.75rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: inset 0 10px 15px var(--robot-shadow-02);
+  box-shadow: inset 0 0.625rem 0.938rem var(--robot-shadow-02);
 }
 
 .robot__power-icon {
@@ -513,53 +485,47 @@ main {
   transition-duration: var(--transition-duration);
 }
 .robot__button {
-  width: 25px;
-  height: 25px;
+  width: 1.563rem;
+  height: 1.563rem;
   border-radius: 1rem;
-  border: 1px solid var(--color-purple);
-  box-shadow: var(--shadow-inner);
-  margin-bottom: 80px;
+  border: 0.063rem solid var(--color-purple);
+  margin-bottom: 5rem;
   background-color: var(--color-purple);
-  box-shadow: inset 0 0 1px rgb(0, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: var(--shadow-inner);
 }
 .robot__button:active {
   border-color: var(--color-robot);
   transform: scale(0.95);
 }
 .robot__button:hover {
-  .robot__power-icon {
-    color: var(--color-dark);
-  }
+  color: var(--color-dark);
 }
 .robot__shadow {
   content: "";
   background-color: rgba(0, 0, 0, 0.1);
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   border-radius: 50%;
-  top: 150px;
-  transform: perspective(200px) rotateX(75deg);
+  top: 9.375rem;
+  transform: perspective(12.5) rotateX(75deg);
   animation: shadowSize 5s infinite;
   transition-duration: 1s;
 }
 .robot__arm {
-  width: 30px;
-  height: 55px;
-  margin-bottom: 50px;
-  border: 3px solid var(--color-purple);
+  width: 1.875rem;
+  height: 3.438rem;
+  margin-bottom: 3.125rem;
+  border: 0.188rem solid var(--color-purple);
   border-radius: 1rem;
   background-color: var(--color-robot);
-  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  box-shadow: inset 0 0 0.313rem rgb(0, 0, 0);
   transition: transform var(--transition-duration);
 }
 .robot__arm.left:hover {
-  transform: translateX(-5px) rotate(10deg);
+  transform: translateX(-0.313rem) rotate(10deg);
 }
 .robot__arm.right:hover {
-  transform: translateX(5px) rotate(-10deg);
+  transform: translateX(0.313rem) rotate(-10deg);
 }
 @keyframes wave {
   0% {
@@ -593,19 +559,19 @@ main {
 @keyframes fly {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-1.25rem);
   }
 }
 @keyframes shadowSize {
   0%,
   100% {
-    width: 150px;
+    width: 13.125rem;
   }
   50% {
-    width: 100px;
+    width: 6.25rem;
   }
 }
 @keyframes rotateHead {
@@ -631,7 +597,7 @@ main {
   animation: none;
 }
 .robot-sleep {
-  height: 5px;
+  height: 0.313rem;
 }
 .arm-wave {
   transform-origin: top center;
@@ -696,10 +662,6 @@ main {
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   opacity: 0;
 }
-[data-js-fadeItem].visible-x {
-  opacity: 1;
-  transform: translateX(0);
-}
 
 .skills__item p {
   margin: 0;
@@ -713,9 +675,6 @@ main {
   border-radius: 1rem;
   box-shadow: var(--shadow-01);
   overflow: hidden;
-  transform: translateX(-50%);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-  opacity: 0;
 }
 .portfolio__image {
   width: 100%;
@@ -754,14 +713,14 @@ main {
   transition-duration: var(--transition-duration);
 }
 .portfolio__modal {
-  z-index: 999;
-  left: 0%;
-  top: 0%;
-  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
   scale: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -782,7 +741,7 @@ main {
 .portfolio__modal-close:hover {
   opacity: 0.5;
 }
-.show-modal {
+.portfolio__modal--show {
   scale: 1;
 }
 .modal-opened {
@@ -811,7 +770,7 @@ main {
   background: none;
   padding: 1rem;
   border-radius: 1rem;
-  border: 1px solid var(--color-dark-03);
+  border: 0.063rem solid var(--color-dark-03);
   width: 100%;
   resize: none;
   color: currentColor;
@@ -820,7 +779,7 @@ main {
 }
 .contact input:focus,
 .contact textarea:focus {
-  border: 1px solid white;
+  border: 0.063rem solid white;
 }
 .form__user-info {
   display: flex;
@@ -856,8 +815,8 @@ main {
   flex-direction: column;
 }
 .contact__list-item svg {
-  width: 25px;
-  height: 25px;
+  width: 1.563rem;
+  height: 1.563rem;
 }
 .contact__list h3 {
   color: currentColor;
@@ -870,20 +829,16 @@ form .button {
   width: 100%;
   margin-top: 1rem;
 }
-form .button:hover {
-  background-color: transparent;
-  color: var(--color-dark);
-}
 .footer {
-  background-color: rgb(55, 55, 55);
-  color: white;
+  background-color: rgb(50, 50, 50);
+  color: rgb(238, 238, 238);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 1rem;
   gap: 1rem;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .footer__text {
   display: flex;
@@ -894,6 +849,30 @@ form .button:hover {
 .footer__text p {
   margin: 0;
 }
+
+/* JavaScript */
+section {
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(-5rem);
+}
+section.visible-y {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-js-slideItem].visible-x {
+  opacity: 1;
+  transform: translateX(0);
+}
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
+
 /* --- MEDIA QUERIES  */
 @media (max-width: 62.5rem) {
   .header__menu {

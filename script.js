@@ -40,8 +40,7 @@ const text = "Привет. Я - Александр.";
 const textSecond = "\nFrontend-разработчик.";
 const textContainer = document.querySelector("[data-js-typewriter]");
 const description = document.querySelector("[data-js-description]");
-const contactButton = document.querySelector("[data-js-contact-button]");
-const nextButton = document.querySelector("[data-js-next-button]");
+const welcomeButtons = document.querySelector("[data-js-welcomeButtons]");
 
 const speed = 100;
 
@@ -80,11 +79,8 @@ async function typeWriter() {
   await delay(200);
   description.classList.add("show");
   await delay(1000);
-  nextButton.classList.add("show");
-  contactButton.classList.add("show");
+  welcomeButtons.classList.add("show");
   await delay(1000);
-  nextButton.style.transition = "0.2s";
-  contactButton.style.transition = "0.2s";
   paragraph.classList.add("show");
 }
 
@@ -154,37 +150,33 @@ function toggleRobotEyes() {
 }
 toggleRobotEyes();
 
-const modal = document.querySelectorAll(".portfolio__modal");
-const thumbnail = document.querySelectorAll(".portfolio__image");
-const closeModalButton = document.querySelectorAll(".portfolio__modal-close");
+const thumbnails = document.querySelectorAll("[data-js-portfolioImage]");
+const modal = document.querySelector("[data-js-modal]");
+const modalImage = modal.querySelector(".portfolio__modal-image");
+const modalClose = modal.querySelector("[data-js-modalClose]");
 
-thumbnail.forEach((image, index) => {
+thumbnails.forEach((image) => {
   image.addEventListener("click", () => {
-    modal[index].classList.add("show-modal");
+    modalImage.src = image.src;
+    modal.classList.add("portfolio__modal--show");
     document.body.classList.add("modal-opened");
-
-    closeModalButton.forEach((button) => {
-      button.addEventListener("click", () => {
-        modal[index].classList.remove("show-modal");
-        document.body.classList.remove("modal-opened");
-      });
-    });
-    if (
-      document.body.classList.contains("modal-opened") &&
-      window.innerWidth > 768
-    ) {
-      modal.forEach((item) => {
-        item.addEventListener("click", () => {
-          item.classList.remove("show-modal");
-          document.body.classList.remove("modal-opened");
-        });
-      });
-    }
   });
 });
 
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("portfolio__modal--show");
+  document.body.classList.remove("modal-opened");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("portfolio__modal--show");
+    document.body.classList.remove("modal-opened");
+  }
+});
+
 const sections = document.querySelectorAll("section");
-const skillsItems = document.querySelectorAll("[data-js-fadeItem]");
+const skillsItems = document.querySelectorAll("[data-js-slideItem]");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(
     (entry) => {
