@@ -38,8 +38,6 @@ h1 {
 h2 {
   margin-top: 3rem;
   margin-bottom: 3rem;
-}
-h2 {
   position: relative;
 }
 h2::before {
@@ -108,7 +106,6 @@ section {
   background-color: var(--color-accent);
   padding: 0.625rem;
   border-radius: 1rem;
-  font-weight: 700;
   font-size: 0.875rem;
   box-shadow: var(--shadow-inner);
   border: 0.125rem solid var(--color-accent);
@@ -297,6 +294,9 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: row;
 }
+.hero__welcome-typewriter-container {
+  height: 6.875rem;
+}
 .hero__welcome-typewriter {
   animation: blinkCursor 0.7s infinite;
   border-right: 0.125rem solid #c9d1d9;
@@ -312,16 +312,13 @@ body {
   font-weight: 700;
   letter-spacing: 0.125rem;
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: 2s;
+  transition: opacity 2s ease;
   visibility: hidden;
-  padding-bottom: 0.938rem;
 }
 .hero__welcome-description {
   opacity: 0;
   visibility: hidden;
-  transition-property: opacity;
-  transition-duration: 2s;
+  transition: opacity 2s ease;
   width: 100%;
 }
 .hero__welcome-buttons {
@@ -330,8 +327,8 @@ body {
   gap: 1rem;
   opacity: 0;
   visibility: hidden;
-  transition-duration: 2s;
   transition-property: opacity;
+  transition-duration: 2s;
 }
 .hero__welcome-button-next {
   background-color: transparent;
@@ -483,6 +480,8 @@ main {
 .robot__power-icon {
   color: white;
   transition-duration: var(--transition-duration);
+  max-width: 100%;
+  height: auto;
 }
 .robot__button {
   width: 1.563rem;
@@ -492,6 +491,9 @@ main {
   margin-bottom: 5rem;
   background-color: var(--color-purple);
   box-shadow: var(--shadow-inner);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .robot__button:active {
   border-color: var(--color-robot);
@@ -507,7 +509,7 @@ main {
   height: 9.375rem;
   border-radius: 50%;
   top: 9.375rem;
-  transform: perspective(12.5) rotateX(75deg);
+  transform: perspective(12.5rem) rotateX(75deg);
   animation: shadowSize 5s infinite;
   transition-duration: 1s;
 }
@@ -614,9 +616,6 @@ main {
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
   justify-content: center;
-}
-.about__wrapper > div {
-  border: var(--border);
 }
 .about__avatar img {
   clip-path: circle(40% at 50% 45%);
@@ -920,6 +919,9 @@ section.visible-y {
   }
   h2 {
     font-size: 1.25rem;
+  }
+  .hero__welcome-typewriter-container {
+    height: 4.375rem;
   }
 }
 @media (max-width: 28.438rem) {

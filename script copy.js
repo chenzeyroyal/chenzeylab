@@ -5,7 +5,7 @@ const themeSwitch = document.querySelector("[data-js-theme-switch]");
 
 themeToggle.addEventListener("click", () => {
   const currentTheme = document.documentElement.getAttribute("data-js-theme");
-  newTheme = currentTheme === "light" ? "dark" : "light";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
   document.documentElement.setAttribute("data-js-theme", newTheme);
   themeSwitch.classList.toggle("switch");
 });
@@ -75,8 +75,7 @@ async function typeWriter() {
     }
     // Говорим функци typeWriter подождать момента, когда разрешится промис (пройдет заданное время). Т.к. это цикл, данная проверка на разрешение срабатывает до момента, пока не закончатся символы в тексте.
   }
-  // Говорим функции typeWriter подождать ммоента, когда разрешится промис (пройдет заданное время). После того, как цикл завершается, функция останавливается и продолжается снова через заданное количество времени.
-  await delay(200);
+  // Говорим функции typeWriter подождать момента, когда разрешится промис (пройдет заданное время). После того, как цикл завершается, функция останавливается и продолжается снова через заданное количество времени.
   description.classList.add("show");
   await delay(1000);
   welcomeButtons.classList.add("show");
@@ -95,60 +94,58 @@ const robot = {
   eyes: document.querySelectorAll("[data-js-robotEye]"),
   arm: document.querySelector("[data-js-robotArm]"),
   shadow: document.querySelector("[data-js-robotShadow]"),
-};
 
-function toggleRobotMode() {
-  robot.button.addEventListener("click", () => {
-    let interval = setInterval(() => {
-      const translateY =
-        parseFloat(getComputedStyle(robot.wrapper).transform.split(", ")[5]) ||
-        0;
-      if (Math.round(translateY) === 0) {
-        clearInterval(interval);
-        robot.wrapper.classList.toggle("landed");
-        robot.shadow.classList.toggle("landed-shadow");
-      }
-    }, 100);
-    robot.eyes.forEach((eye) => {
-      eye.classList.toggle("landed");
-      eye.classList.remove("hide");
-      eye.classList.toggle("robot-sleep");
-    });
-    robot.head.classList.toggle("rotate-head");
-    robot.arm.classList.toggle("arm-wave");
-  });
-}
-toggleRobotMode();
-
-function toggleRobotEyes() {
-  robot.arm.addEventListener("animationstart", () => {
-    robot.eyes.forEach((eye) => {
-      eye.classList.add("hide");
-    });
-  });
-  robot.arm.addEventListener("animationend", () => {
-    robot.eyes.forEach((eye) => {
-      eye.classList.remove("hide");
-    });
-  });
-  robot.head.addEventListener("mouseover", () => {
-    robot.eyes.forEach((eye) => {
-      if (!eye.classList.contains("robot-sleep")) {
-        eye.classList.add("landed");
-        eye.classList.add("hide");
-      }
-    });
-  });
-  robot.head.addEventListener("mouseout", () => {
-    robot.eyes.forEach((eye) => {
-      if (!eye.classList.contains("robot-sleep")) {
-        eye.classList.remove("landed");
+  toggleMode() {
+    this.button.addEventListener("click", () => {
+      let interval = setInterval(() => {
+        const translateY =
+          parseFloat(getComputedStyle(this.wrapper).transform.split(", ")[5]) ||
+          0;
+        if (Math.round(translateY) === 0) {
+          clearInterval(interval);
+          this.wrapper.classList.toggle("landed");
+          this.shadow.classList.toggle("landed-shadow");
+        }
+      }, 100);
+      this.eyes.forEach((eye) => {
+        eye.classList.toggle("landed");
         eye.classList.remove("hide");
-      }
+        eye.classList.toggle("robot-sleep");
+      });
+      this.head.classList.toggle("rotate-head");
+      this.arm.classList.toggle("arm-wave");
     });
-  });
-}
-toggleRobotEyes();
+  },
+
+  toggleEyes() {
+    this.arm.addEventListener("animationstart", () => {
+      this.eyes.forEach((eye) => {
+        eye.classList.add("hide");
+      });
+    });
+    this.arm.addEventListener("animationend", () => {
+      this.eyes.forEach((eye) => {
+        eye.classList.remove("hide");
+      });
+    });
+
+    const toggleRobotEyesState = (hide) => {
+      this.eyes.forEach((eye) => {
+        if (!eye.classList.contains("robot-sleep")) {
+          eye.classList.toggle("landed", hide);
+          eye.classList.toggle("hide", hide);
+        }
+      });
+    };
+    this.head.addEventListener("mouseover", () => toggleRobotEyesState(true));
+    this.head.addEventListener("mouseout", () => toggleRobotEyesState(false));
+  },
+  init() {
+    this.toggleMode();
+    this.toggleEyes();
+  },
+};
+robot.init();
 
 const thumbnails = document.querySelectorAll("[data-js-portfolioImage]");
 const modal = document.querySelector("[data-js-modal]");
@@ -193,7 +190,7 @@ const observer = new IntersectionObserver((entries) => {
         });
       }
     },
-    { treshold: 0.2 }
+    { threshold: 0.2 }
   );
 });
 
