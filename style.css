@@ -868,8 +868,8 @@ section.visible-y {
   transform: translateX(0);
 }
 .show {
-  opacity: 1 !important;
-  visibility: visible !important;
+  opacity: 1;
+  visibility: visible;
 }
 
 .hide {
