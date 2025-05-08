@@ -312,13 +312,13 @@ body {
   font-weight: 700;
   letter-spacing: 0.125rem;
   opacity: 0;
-  transition: opacity 2s ease, visibility 2s ease;
+  transition: opacity 2s ease;
   visibility: hidden;
 }
 .hero__welcome-description {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 2s ease, visibility 2s ease;
+  transition: opacity 2s ease;
   width: 100%;
 }
 .hero__welcome-buttons {
