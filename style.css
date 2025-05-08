@@ -321,6 +321,11 @@ body {
   transition: opacity 2s ease;
   width: 100%;
 }
+.hero__welcome-paragraph,
+.hero__welcome-description,
+.hero__welcome-buttons {
+  will-change: opacity, visibility;
+}
 .hero__welcome-buttons {
   display: flex;
   align-items: center;
@@ -750,7 +755,7 @@ main {
 }
 .contact__wrapper {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
 }
 .contact form {
@@ -863,8 +868,8 @@ section.visible-y {
   transform: translateX(0);
 }
 .show {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .hide {
