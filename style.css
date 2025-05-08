@@ -337,11 +337,11 @@ body {
   background-color: var(--color-accent);
   color: white;
 }
-.hero__welcome-paragraph,
+/* .hero__welcome-paragraph,
 .hero__welcome-description,
 .hero__welcome-buttons {
   will-change: opacity, visibility;
-}
+} */
 
 @keyframes blinkCursor {
   0% {
