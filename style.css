@@ -484,8 +484,8 @@ main {
 .robot__power-icon {
   color: white;
   transition-duration: var(--transition-duration);
-  max-width: 100%;
-  height: auto;
+  width: 1rem;
+  height: 1rem;
 }
 .robot__button {
   width: 1.563rem;
