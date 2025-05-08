@@ -502,6 +502,7 @@ main {
 .robot__power-icon {
   width: 50%;
   color: white;
+  user-select: none;
   transition-duration: var(--transition-duration);
 }
 .robot__shadow {
