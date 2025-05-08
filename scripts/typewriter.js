@@ -40,11 +40,11 @@ export function handleTypeWriter() {
       // Говорим функци typeWriter подождать момента, когда разрешится промис (пройдет заданное время). Т.к. это цикл, данная проверка на разрешение срабатывает до момента, пока не закончатся символы в тексте.
     }
     // Говорим функции typeWriter подождать момента, когда разрешится промис (пройдет заданное время). После того, как цикл завершается, функция останавливается и продолжается снова через заданное количество времени.
+    paragraph.classList.add("show");
+    await delay(1000);
     description.classList.add("show");
     await delay(1000);
     welcomeButtons.classList.add("show");
-    await delay(1000);
-    paragraph.classList.add("show");
   }
 
   window.onload = typeWriter;

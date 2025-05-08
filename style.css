@@ -312,13 +312,13 @@ body {
   font-weight: 700;
   letter-spacing: 0.125rem;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 2s ease, visibility 2s ease;
   visibility: hidden;
 }
 .hero__welcome-description {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 2s ease;
+  transition: opacity 2s ease, visibility 2s ease;
   width: 100%;
 }
 .hero__welcome-buttons {
@@ -327,8 +327,7 @@ body {
   gap: 1rem;
   opacity: 0;
   visibility: hidden;
-  transition-property: opacity;
-  transition-duration: 2s;
+  transition: opacity 2s ease, visibility 2s ease;
 }
 .hero__welcome-button-next {
   background-color: transparent;
@@ -337,6 +336,11 @@ body {
 .hero__welcome-button-next:hover {
   background-color: var(--color-accent);
   color: white;
+}
+.hero__welcome-paragraph,
+.hero__welcome-description,
+.hero__welcome-buttons {
+  will-change: opacity, visibility;
 }
 
 @keyframes blinkCursor {
@@ -864,8 +868,8 @@ section.visible-y {
   transform: translateX(0);
 }
 .show {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .hide {
