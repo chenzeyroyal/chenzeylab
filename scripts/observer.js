@@ -13,6 +13,7 @@ const observer = new IntersectionObserver((entries) => {
         skillsItems.forEach((item) => {
           if (target === item) {
             item.classList.add("visible-x");
+            observer.unobserve(item);
           }
         });
       }
